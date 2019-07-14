@@ -11,7 +11,7 @@
   "description": 'سیمرغ، افزونه‌ای تخصصی جهت شناسایی درگاه‌های بانکی‌ جعلی در ایران و مقابله با آن می‌باشد. در مورد فیشینگ <a target="_blank" href="https://fa.wikipedia.org/wiki/%D9%81%DB%8C%D8%B4%DB%8C%D9%86%DA%AF">بیشتر بدانیم</a>',
 
   "icons": {
-    "48": "icons/privacy-48.png"
+    "48": "icons/simorgh-48.png"
   },
   "background":{
       "scripts":["libs/jquery.min.js","libs/fp.js","utility.js","background.js"]
@@ -23,7 +23,7 @@
       "js": [
           "libs/jquery.min.js",
           "libs/notify.min.js",
-          "simorgh.js"
+          "simurgh.js"
       ],
       "run_at":"document_idle"
     }
