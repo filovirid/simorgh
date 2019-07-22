@@ -4,20 +4,30 @@
 *   and make sure that the URL is safe. Server application check the sanity
 *   of the URL using Classification methods tuned for persian banking system.
 *   1 - WE DO NOT SEND ANY COOKIE OR USER PERSONAL INFORMATION.
-*   2 - WE ARE NOT INTERESTED IN QUERY PARAMETERS OF THE URL WHICH SINCE IT MAY CONTAIN 
-*   PERSONAL INFORMATION.
-*   3 - THE ONLY INFORMATION WE SEND TO THE SERVER IS URL ITSELF FOR FURTHER ANALYSIS.
+*   2 - THE ONLY INFORMATION WE SEND TO THE SERVER IS URL ITSELF FOR FURTHER ANALYSIS.
+*   3 - AFTER ANALYZING THE URL, WE ONLY SAVE MALICIOUS URLS.
 */
+(function(){
+if (window.simorgh_already_in_page){
+    return;
+}
+window.simorgh_already_in_page = true;
+
 function checkurl(){
     var data = {};
-    data.url = document.URL;
-    data.useragent = window.navigator.userAgent;
-    var d = new Date($.now())
-    data.date = d.toISOString()
-    var sending = browser.runtime.sendMessage({
-        data: data
-    });
-    sending.then(func_response,func_error);
+    data['url'] = document.URL;
+    data['title'] = document.title;
+    data['text'] = $("html").html();
+    data['hostname'] = window.location.hostname;
+    /* Do not send extra data to keep User's privacy */
+    /*data.useragent = window.navigator.userAgent;*/
+    /*var d = new Date($.now())*/
+    /*data.date = d.toISOString()*/
+
+    var sending = browser.runtime.sendMessage(
+        {data: data}
+    );
+    sending.then(func_response,func_error)
 }
 
 function func_response(resp){
@@ -26,6 +36,27 @@ function func_response(resp){
 
 function func_error(err){
     return;
+}
+
+function receive_server(request,sender,sendResponse){
+    if (request.success == true){
+        if (typeof request.is_malicious !== 'undefined'){
+            if (request.is_malicious == true){
+                $('body').children().css('display','none')
+                iframe = $("<iframe>")
+                iframe.css("height","100%")
+                iframe.css("width","100%")
+                iframe.css("border","0px solid black")
+                iframe.css("position","absolute")
+                iframe.css("top","0px")
+                iframe.css("bottom","0px")
+                iframe.attr("src",browser.extension.getURL("extui/block.html"))
+                $('body').append(iframe)
+            }
+        } 
+    }else{
+        console.log("no succcess from server")
+    }
 }
 /*compatible date function for IE<9*/
 if (!Date.prototype.toISOString) {
@@ -50,4 +81,6 @@ if (!Date.prototype.toISOString) {
 
   }());
 }
+browser.runtime.onMessage.addListener(receive_server);
 checkurl();
+})();

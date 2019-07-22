@@ -1,32 +1,31 @@
 {
-    "permissions" : [
-        "tabs",
-        "webRequest",
-        "*://*/"
-    ],
-  "manifest_version": 2,
-  "name": "simorgh",
-  "version": "0.1",
+	"permissions": [
+		"tabs",
+		"webRequest",
+		"*://*/"
+	],
+	"manifest_version": 2,
+	"name": "simorgh",
+	"version": "0.1",
 
-  "description": 'سیمرغ، افزونه‌ای تخصصی جهت شناسایی درگاه‌های بانکی‌ جعلی در ایران و مقابله با آن می‌باشد. در مورد فیشینگ <a target="_blank" href="https://fa.wikipedia.org/wiki/%D9%81%DB%8C%D8%B4%DB%8C%D9%86%DA%AF">بیشتر بدانیم</a>',
+	"description": "Simorgh extension designed to protect users from fake/phishing banking webpages in Iran.",
 
-  "icons": {
-    "48": "icons/simorgh-48.png"
-  },
-  "background":{
-      "scripts":["libs/jquery.min.js","libs/fp.js","utility.js","background.js"]
-  
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": [
-          "libs/jquery.min.js",
-          "libs/notify.min.js",
-          "simurgh.js"
-      ],
-      "run_at":"document_idle"
-    }
-  ]
+	"icons": {
+		"48": "icons/simurg-48.png"
+	},
+	"background": {
+		"scripts": ["libs/jquery.min.js","libs/psl.min.js","background.js"]
 
+	},
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": [
+			"libs/jquery.min.js",
+			"simorgh.js"
+		],
+		"run_at": "document_idle"
+	}],
+    "web_accessible_resources":[
+        "extui/block.html"
+    ]
 }

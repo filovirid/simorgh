@@ -47,15 +47,10 @@ function isandroidchrome(){
 
 /*send json data to specific url in ajax form*/
 function send_data(url,data,success = function(){},error = function(){}){
-    if (typeof data !== 'string'){
-        data = JSON.stringify(data);
-    }
     $.ajax({
         url: url,
         method: "POST",
         dataType: "json",
-        data:{data:data}
-    }).done(success()).fail(error());
+        data:{url:data}
+    }).done(success).fail(error());
 }
-
-
