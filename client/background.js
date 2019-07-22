@@ -47,7 +47,6 @@ function is_malicious(data){
     var txt = data.text;
     if (txt == ""){ return false;}
     var ssdeep_score = get_ssdeep_score(txt)
-    console.log(ssdeep_score)
     var mal_score = ssdeep_score.mal;
     var ben_score = ssdeep_score.ben;
     var sk = has_saman_keywords(txt);
@@ -196,11 +195,8 @@ function get_bank_list(){
 }
 
 function is_valid_bank_domain(url){
-    console.log('in is_valid_bank_domain')
     var valid_bank_list = get_bank_list()
-    console.log(valid_bank_list)
     var tldparser = psl.parse(url)
-    console.log(tldparser)
     if (tldparser.domain == ""){
         return false;
     }
