@@ -185,6 +185,7 @@ function get_special_title_keyword(){
 
 function get_bank_list(){
     return  [
+        'shaparak.ir',
         '733.ir','ecd-co.ir',
         'behpardakht.com','pep.co.ir',
         'sep.ir','pna.co.ir','pec.ir',
