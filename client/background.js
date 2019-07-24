@@ -191,7 +191,7 @@ function get_bank_list(){
         'sep.ir','pna.co.ir','pec.ir',
         'sadadpsp.ir','fanavacard.ir',
         'irankish.com','mca.co.ir',
-        'payping.ir','sayancard.ir'
+        'payping.ir','sayancard.ir','zarinpal.com'
     ]
 }
 
