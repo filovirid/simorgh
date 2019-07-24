@@ -43,9 +43,16 @@ function is_phishing_client(data){
 }
 
 function is_malicious(data){
+    console.log("we are in malicious")
     if (is_valid_bank_domain(data.hostname)){return false;}
+    console.log("here")
     var txt = data.text;
     if (txt == ""){ return false;}
+
+    console.log("here1")
+    if(domain_in_exclusion_list(data.hostname)){return false;}
+
+    console.log("here2")
     var ssdeep_score = get_ssdeep_score(txt)
     var mal_score = ssdeep_score.mal;
     var ben_score = ssdeep_score.ben;
@@ -56,16 +63,14 @@ function is_malicious(data){
     var title = data.title;
     var has_title_keyword = has_special_title_keyword(title);
     if (sk > 0.75 || pk > 0.75){
-        if (!domain_in_exclusion_list(data.hostname)){
-            return true;
-        }
+        return true;
     }
-    if (ben_score > 0 || mal_score >0) { return true;}
+    if (ben_score > 0 || mal_score >0) { 
+        return true;
+    }
     if (has_bnk_in_content || is_in_url_word(data.url)){
         if ((sk>0 || pk>0) && has_title_keyword){
-            if (!domain_in_exclusion_list(data.hostname)){
-                return true;
-            }
+            return true;
         }
     }
     return false;
@@ -202,12 +207,12 @@ function get_bank_list(){
 }
 
 function is_valid_bank_domain(url){
-    var valid_bank_list = get_bank_list()
-    var tldparser = psl.parse(url)
+    var valid_bank_list = get_bank_list();
+    var tldparser = psl.parse(url);
     if (tldparser.domain == ""){
         return false;
     }
-    if (valid_bank_list.indexof(tldparser.domain) > -1){
+    if (valid_bank_list.indexOf(tldparser.domain) > -1){
         return true;
     }
     return false;
@@ -237,12 +242,17 @@ function read_malicious_ssdeep(){
 }
 
 function domain_in_exclusion_list(domain_name){
+    console.log("in exclusion_list check")
     var ex_list = get_exclusion_list()
+    console.log("ex list is")
+    console.log(ex_list)
     var tldparser = psl.parse(domain_name)
+    console.log("our domain is")
+    console.log(tldparser.domain)
     if (tldparser.domain == ""){
         return false;
     }
-    if (ex_list.indexof(tldparser.domain) > -1){
+    if (ex_list.indexOf(tldparser.domain) > -1){
         return true;
     }
     return false;
