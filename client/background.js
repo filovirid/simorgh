@@ -185,13 +185,13 @@ function get_special_title_keyword(){
 
 function get_bank_list(){
     return  [
-        'shaparak.ir',
-        '733.ir','ecd-co.ir',
+        'shaparak.ir','asanpardakht.ir',
+        '733.ir','ecd-co.ir','sayancard.ir',
         'behpardakht.com','pep.co.ir',
         'sep.ir','pna.co.ir','pec.ir',
         'sadadpsp.ir','fanavacard.ir',
         'irankish.com','mca.co.ir',
-        'payping.ir'
+        'payping.ir','sayancard.ir'
     ]
 }
 
