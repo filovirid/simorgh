@@ -1,7 +1,7 @@
 # manually update the list in background.js file
 # this is the list of websites which are not banking account but
 # may create false positive.
-
+# just make sure the domain you add is not a free subdomain service provider like persiangig.com
 'president.ir','saamad.ir','dolat.ir','ejraee.gov.ir',
 'cabinet.gov.ir','lvp.ir','dotic.ir','women.gov.ir',
 'ghanoonasasi.ir','freezones.ir','ias.ac.ir','persianacademy.ir',
