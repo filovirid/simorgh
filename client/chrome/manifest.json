@@ -1,0 +1,31 @@
+{
+	"permissions": [
+		"tabs",
+		"webRequest",
+		"*://*/"
+	],
+	"manifest_version": 2,
+	"name": "simorgh",
+	"version": "0.1",
+
+	"description": "Simorgh extension designed to protect users from fake/phishing banking webpages in Iran.",
+
+	"icons": {
+		"48": "icons/simurg-48.png"
+	},
+	"background": {
+		"scripts": ["libs/jquery.min.js","libs/psl.min.js","background.js"]
+
+	},
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": [
+			"libs/jquery.min.js",
+			"simorgh.js"
+		],
+		"run_at": "document_idle"
+	}],
+    "web_accessible_resources":[
+        "extui/block.html"
+    ]
+}
