@@ -6,7 +6,7 @@
 	],
 	"manifest_version": 2,
 	"name": "simorgh",
-	"version": "0.2",
+	"version": "0.3",
 
 	"description": "Simorgh extension designed to protect users from fake/phishing banking webpages in Iran.",
 
