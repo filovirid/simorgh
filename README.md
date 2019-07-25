@@ -11,4 +11,4 @@ Simorgh is a free extension for browsers to protect persian users from phishing 
 
 ##### Thanks to:
 
-amirgi73 for his contributions.
+[amirgi73](https://github.com/amirgi73) for his contributions.
