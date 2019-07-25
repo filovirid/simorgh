@@ -1,58 +1,115 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>DANGER - خطر</title>
- 	<style>
-		ul > li {
-			margin: 2px;
-			font-size: 1.2em;
-		}
+<head>
+	<meta charset="UTF-8">
+	<title>DANGER - خطر</title>
+	<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				background: #ECE9E6;  /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			}
+			ul li{
+				list-style: none;
+				margin: 2px;
+				font-size: 1.2em;
+				
+			}
+			ul li:before{
+				content:'';
+				padding: 0 0 3px 25px;
+				background: url("../icons/tick.png") no-repeat;
+				display: inline-block;
+				height: 15px;
+			}
+			.danger{
+				
+				color: orange;
+				font-size:50px;
+				text-align:center;
+				animation: animate 1s linear infinite;
+				font-weight: 300;	
+			}
+			a{
+				text-decoration: none;
+				color:red;
+				animation: link 1s linear infinite;
+			}
+			.content{
+				direction: rtl
+			}
+			.container{
+				width:980px;
+				margin:0 auto;
+			}
+			h3{
+				direction: rtl;
+			}
+			img{
+				width:50px;
+			}
+			@keyframes animate{
+				0%{
+					transform: scale(1);
+				}
+				50%{
+					transform: scale(1.2);
+					color:red;
+				}
+				100%{
+					transform: scale(1);
+				}
+			}
+			
 	</style>
-    </head>
-	
-    <body>
-	<h1><center><font style="color:red">!!!هشدار!!!</font></center></h1>
-   	<div>
-		<p style="font-size:1.5em;direction:rtl;">
-		
-		این صفحه با احتمال بالایی‌ <a style="text-decoration:none;" href="https://fa.wikipedia.org/wiki/%D9%81%DB%8C%D8%B4%DB%8C%D9%86%DA%AF">فیشینگ</a	> (صفحه جعلی) می‌باشد. هکر‌ها با استفاده از ساخت صفحه‌های جعلی مشابه صفحه‌های پرداخت بانکی‌، تلاش می‌‌کنند تا اطلاعات بانکی‌ کارت شما را سرقت کنند.
-
-		</p>
-		<p style="font-size:1.5em;direction:rtl;">
-
-اگر در حال استفاده از سایت‌هایی‌ مانند: شرطبندی یا پیش بینی‌ نتایج (bet)، صیغه یابی‌ یا همسر یابی‌، انواع صفحه‌های مربوط به ارزش افزوده که درخواست شماره تلفن از شما می‌‌کنند، ماهواره جیبی‌ و یا نرم افزار یا صفحه‌های مشابه هستید، همین الان صفحهٔ مورد نظر را ترک کنید.
-
-برای کسب اطلاعات بیشتر در مورد این نوع کلاه برداری <a href="https://fa.wikipedia.org/wiki/%D9%81%DB%8C%D8%B4%DB%8C%D9%86%DA%AF">اینجا</a> کلیک کنید.
-		</p>
+</head>
+<body>	
+	<div class="container">
+			<h1 class="danger">
+				<img src="../icons/alert.png" alt="">
+				!!!هشدار!!!
+				<img src="../icons/alert.png" alt="">
+			</h1>
+			<div class="content">
+			 <p>
+			 
+			 این صفحه با احتمال بالایی‌ <a href="https://fa.wikipedia.org/wiki/%D9%81%DB%8C%D8%B4%DB%8C%D9%86%DA%AF">فیشینگ</a	> (صفحه جعلی) می‌باشد. هکر‌ها با استفاده از ساخت صفحه‌های جعلی مشابه صفحه‌های پرداخت بانکی‌، تلاش می‌‌کنند تا اطلاعات بانکی‌ کارت شما را سرقت کنند.
+	 
+			 </p>
+			 <p>
+	 
+	 اگر در حال استفاده از سایت‌هایی‌ مانند: شرطبندی یا پیش بینی‌ نتایج (bet)، صیغه یابی‌ یا همسر یابی‌، انواع صفحه‌های مربوط به ارزش افزوده که درخواست شماره تلفن از شما می‌‌کنند، ماهواره جیبی‌ و یا نرم افزار یا صفحه‌های مشابه هستید، همین الان صفحهٔ مورد نظر را ترک کنید.
+	 
+	 برای کسب اطلاعات بیشتر در مورد این نوع کلاه برداری <a href="https://fa.wikipedia.org/wiki/%D9%81%DB%8C%D8%B4%DB%8C%D9%86%DA%AF">اینجا</a> کلیک کنید.
+			 </p>
+		 </div>
+		 <div>
+			 <h3>لیست صفحه‌های پرداخت معتبر و مورد تائید بانکی‌ به شرح زیر می‌باشد:</h3>
+			 <ul>
+				 <li>https://sep.shaparak.ir</li>
+				 <li>https://bpm.shaparak.ir</li>
+				 <li>http://app.733.ir</li>
+				 <li>http://ecd-co.ir</li>
+				 <li>https://www.irankish.com</li>
+				 <li>http://www.behpardakht.com</li>
+				 <li>https://www.pep.co.ir</li>
+				 <li>https://www.sep.ir</li>
+				 <li>https://www.pna.co.ir</li>
+				 <li>http://www.pec.ir</li>
+				 <li>https://sadadpsp.ir</li>
+				 <li>https://www.fanavacard.ir</li>
+				 <li>http://mca.co.ir</li>
+				 <li>https://www.payping.ir</li>
+				 <li>http://asanpardakht.ir</li>
+				 <li>http://sayancard.ir</li>
+				 <li>http://www.sepehrpay.com</li>
+				 <li>https://zarinpal.com</li>
+			 </ul>	
+		 </div>
 	</div>
-	<div>
-		<h3 style="direction:rtl;">لیست صفحه‌های پرداخت معتبر و مورد تائید بانکی‌ به شرح زیر می‌باشد:</h3>
-		<ul>
-            <li>https://sep.shaparak.ir</li>
-            <li>https://bpm.shaparak.ir</li>
-			<li>http://app.733.ir</li>
-			<li>http://ecd-co.ir</li>
-			<li>https://www.irankish.com</li>
-			<li>http://www.behpardakht.com</li>
-			<li>https://www.pep.co.ir</li>
-			<li>https://www.sep.ir</li>
-			<li>https://www.pna.co.ir</li>
-			<li>http://www.pec.ir</li>
-			<li>https://sadadpsp.ir</li>
-			<li>https://www.fanavacard.ir</li>
-			<li>http://mca.co.ir</li>
-			<li>https://www.payping.ir</li>
-            <li>http://asanpardakht.ir</li>
-            <li>http://sayancard.ir</li>
-            <li>http://www.sepehrpay.com</li>
-            <li>https://zarinpal.com</li>
-		</ul>	
-	</div>
-    </body>
-
+</body>
 </html>  	
-
-
-
-
