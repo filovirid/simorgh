@@ -198,10 +198,10 @@ function get_bank_list(){
     return  [
         'shaparak.ir','asanpardakht.ir',
         '733.ir','ecd-co.ir','sayancard.ir',
-        'behpardakht.com','pep.co.ir',
+        'behpardakht.com','pep.co.ir','sepehrpay.com',
         'sep.ir','pna.co.ir','pec.ir',
         'sadadpsp.ir','fanavacard.ir',
-        'irankish.com','mca.co.ir',
+        'irankish.com','mca.co.ir','mcac.co.ir',
         'payping.ir','sayancard.ir','zarinpal.com'
     ]
 }
